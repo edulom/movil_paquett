@@ -1,0 +1,47 @@
+<ion-content class="main" text-center>
+  <ion-card>
+  
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="img_perfil">
+      </ion-avatar>
+      <h2>{{nombre}}</h2>
+      <p>{{nacimiento}}</p>
+    </ion-item>
+ 
+  
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-header>
+
+      <button ion-button clear (click)="conf()">
+        Configuración de la cuenta
+      </button>
+
+    </ion-card-header>
+  
+    <ion-list *ngIf="confOn">
+
+      <button ion-item (click)="editCampo(0)">
+        Imagen de perfil
+      </button>
+
+      <button ion-item (click)="editCampo(1)">
+        Nombres
+      </button>
+  
+      <button ion-item (click)="editCampo(3)">
+        Fecha de nacimiento
+      </button>
+  
+      <button ion-item (click)="editCampo(4)">
+        Contraseña de la cuenta
+      </button>
+  
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>

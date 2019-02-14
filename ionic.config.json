@@ -1,6 +1,5 @@
 {
-  "name": "movil_paquett",
+  "name": "New Ionic App",
   "integrations": {},
-  "type": "ionic-angular",
-  "id": "f1a81777"
+  "type": "ionic-angular"
 }

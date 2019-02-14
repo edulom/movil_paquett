@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="navCtrl.pop();">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Confirma tu correo electrónico</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="row">
+    <ion-list text-center class="contenedor">
+      <br>
+      <h4 >Ingresa tu código de confirmación.</h4>
+      <br>
+      <p>Recibirás un correo en <strong>{{correo}}</strong> en el que se te proporcionará el código de confirmación.</p>
+      <br>
+      <ion-list>
+        <div class="divMargen" id="email">
+          <ion-item>
+            <ion-label  color="dark">Codigo</ion-label>
+            <ion-input floting clearInput [(ngModel)]="verifPassword"></ion-input>
+          </ion-item>
+          <button (click)="validar()" *ngIf="verifPassword" ion-button color="botonMain" item-right>Confirmar</button>
+        </div>
+      </ion-list>
+      
+      <p> <a (click)="reenviar()" color="botonMain" >Reenviar código</a> (espera al menos 5 minutos antes de solicitar otro código).</p>
+      
+      
+      </ion-list>
+  </div>
+  
+
+</ion-content>

@@ -1,0 +1,49 @@
+<ion-content padding>
+    <ion-grid>
+      <ion-row justify-content-center padding>
+        <ion-col>
+          <ion-row> 
+            <ion-col>
+              <div class="left_margen" text-left><h3>SOPORTE</h3></div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row class="marRow" text-left style="background:#F9FAFA;border: 1px solid black;" *ngFor="let not of nots; let i = index">
+            <ion-col>
+              <ion-row style="border: 1px solid black;">
+                  <button class="margen" clear ion-button (click)="nots[i].status=!nots[i].status" color="text">
+                      {{not.title}}
+                  </button>
+              </ion-row>
+              <ion-row *ngIf="nots[i].status">
+                  {{not.desc}}
+              </ion-row>
+              
+            </ion-col>
+          </ion-row> 
+  
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="tablaPaqEntre" justify-content-center no-padding>
+          <ion-col>
+            <ion-row> 
+              <ion-col>
+                <div class="left_margen" text-left><h3>ASUNTO</h3></div>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row text-left style="background:#F9FAFA;border: 1px solid black;">
+              <ion-col>
+                <ion-item>
+                  <ion-input style=" height:100px;" type="text" placeholder="Descripción"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+    
+    
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    
+  </ion-content>

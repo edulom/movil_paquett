@@ -1,0 +1,25 @@
+page-actualizar-datos {
+     .main{
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .item.item-input {
+        background-color: transparent;
+    }
+    .error{
+        border-bottom: red 3px solid;
+    }
+    .contenedor{
+        width: 50%;
+        margin-left: auto; 
+        margin-right: auto; 
+        display: block;
+        top:50%;
+        background-color: white;
+        -webkit-box-shadow: -2px 0px 138px 9px rgba(0,0,0,0.42);
+        -moz-box-shadow: -2px 0px 138px 9px rgba(0,0,0,0.42);
+        box-shadow: -2px 0px 138px 9px rgba(0,0,0,0.42);
+    }
+}

@@ -1,0 +1,143 @@
+<div col-12 lign-items-center *ngIf="!table" class="contenedorCelular" id="loginLayot">
+  <ion-grid>
+  
+    <ion-row id="email">
+      <ion-col >
+        <ion-item>
+          <ion-icon color="text" name="ios-mail-outline" item-left></ion-icon>
+          <ion-label color="text" floating>Email/Usuario</ion-label>
+          <ion-input clearInput (keyup)="updateUser($event)" [(ngModel)]="email" (ngModelChange)="email=$event.toLowerCase()"
+            type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row id="pass">
+      <ion-col>
+        <ion-item *ngIf="!mostrar">
+          <ion-icon color="text" name="ios-lock-outline" item-left></ion-icon>
+          <ion-label color="text" floating>Contraseña</ion-label>
+          <ion-input (keyup)="updatePass($event)" [(ngModel)]="password" type="password"></ion-input>
+          <!-- (ngModelChange)="password=$event.toLowerCase()" -->
+          <button color="text" clear ion-button item-right icon-only (click)="cambiarMostrar()">
+            <ion-icon name="ios-eye-off-outline"></ion-icon>
+          </button>
+        </ion-item>
+  
+        <ion-item *ngIf="mostrar">
+          <ion-icon color="text" name="ios-lock-outline" item-left></ion-icon>
+          <ion-label color="text" floating>Contraseña</ion-label>
+          <ion-input (keyup)="updatePass($event)" [(ngModel)]="password" type="text"></ion-input>
+          <!-- (ngModelChange)="password=$event.toLowerCase()" -->
+          <button color="text" clear ion-button item-right icon-only (click)="cambiarMostrar()">
+            <ion-icon name="ios-eye-outline"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col>
+        <ion-list text-right>
+          <button clear ion-button color="text" (click)="cargar(1)">
+            <p>¿Olvidaste tu contraseña?</p>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row text-center>
+      <ion-col>
+        <ion-buttons start>
+          <button icon-start ion-button color="main" (click)="inciar()">
+            <img width="30%" height="100%" src="assets/imgs/icono_registrarse.gif">
+            <p class="pMargen">Login</p>
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row text-center>
+      <ion-col>
+        <button clear ion-button color="text" (click)="cargar(2)">
+          <p>Crear cuenta</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  
+  
+  
+  </ion-grid>
+</div>
+
+<div col-5  *ngIf="table" class="contenedorTablet" id="loginLayot">
+  <ion-grid>
+
+    <ion-row id="email">
+      <ion-col>
+        <ion-item>
+          <ion-icon color="text" name="ios-mail-outline" item-left></ion-icon>
+          <ion-label color="text" color="text" >Email/Usuario</ion-label>
+          <ion-input clearInput (keyup)="updateUser($event)" [(ngModel)]="email" (ngModelChange)="email=$event.toLowerCase()"
+            type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="pass">
+      <ion-col>
+        <ion-item *ngIf="!mostrar">
+          <ion-icon color="text" name="ios-lock-outline" item-left></ion-icon>
+          <ion-label color="text">Contraseña</ion-label>
+          <ion-input color="text" (keyup)="updatePass($event)" [(ngModel)]="password" type="password"></ion-input>
+          <!-- (ngModelChange)="password=$event.toLowerCase()" -->
+          <button color="text" clear ion-button item-right icon-only (click)="cambiarMostrar()">
+            <ion-icon  name="ios-eye-off-outline"></ion-icon>
+          </button>
+        </ion-item>
+
+        <ion-item *ngIf="mostrar">
+          <ion-icon color="text" name="ios-lock-outline" item-left></ion-icon>
+          <ion-label color="text">Contraseña</ion-label>
+          <ion-input (keyup)="updatePass($event)" [(ngModel)]="password" type="text"></ion-input>
+          <!-- (ngModelChange)="password=$event.toLowerCase()" -->
+          <button color="text" clear ion-button item-right icon-only (click)="cambiarMostrar()">  
+            <ion-icon  name="ios-eye-outline"></ion-icon>
+          </button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list text-right>
+          <button clear ion-button color="text" (click)="cargar(1)">
+            <p>¿Olvidaste tu contraseña?</p>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row text-center>
+      <ion-col>
+        <ion-buttons start>
+          <button icon-start ion-button color="main" (click)="inciar()">
+            <img width="30%" height="100%" src="assets/imgs/icono_registrarse.gif">
+            <p class="pMargen">Login</p>
+          </button>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+
+    <ion-row text-center>
+      <ion-col>
+        <button clear ion-button color="text" (click)="cargar(2)">
+          <p>Crear cuenta</p>
+        </button>
+      </ion-col>
+    </ion-row>
+
+
+
+  </ion-grid>
+</div>

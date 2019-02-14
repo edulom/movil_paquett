@@ -1,0 +1,299 @@
+<ion-list *ngIf="tablet" sm class="contenedorTablet">
+  <form [formGroup]="nvoUsr" (ngSubmit)="saveData()" novalidate>
+
+    <ion-list class="row">
+
+      <ion-item id="nombreC">
+        <ion-label floating>
+          <ion-icon name="person"></ion-icon> Nombre:
+        </ion-label>
+        <ion-input (keyup)="validar(1)" formControlName="nombre" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="errorN" class="row">
+        <ion-label text-center color="danger" stacked>
+          <ion-icon name="alert"></ion-icon> Introduce tus nombres.
+        </ion-label>
+      </ion-item>
+
+      <div class="row">
+        <div class="col">
+          <ion-item id="apellidoPC" class="col">
+            <ion-label floating>
+              <ion-icon name="person"></ion-icon> Apellido Paterno:
+            </ion-label>
+            <ion-input (keyup)="validar(2)" formControlName="apellidoP" type="text"></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="col">
+          <ion-item id="apellidoMC" class="col">
+            <ion-label floating>
+              <ion-icon name="person"></ion-icon> Apellido Materno:
+            </ion-label>
+            <ion-input (keyup)="validar(3)" formControlName="apellidoM" type="text"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <ion-item *ngIf="errorAp || errorAm" text-center class="row">
+        <ion-label color="danger" stacked>
+          <ion-icon name="alert"></ion-icon> Introduce tus Apellidos.
+        </ion-label>
+      </ion-item>
+
+      <div class="row">
+        <div class="col">
+          <ion-item id="emailC">
+            <ion-label floating>
+              <ion-icon name="mail"></ion-icon> E-mail:
+            </ion-label>
+            <ion-input (keyup)="validar(4)" formControlName="email" type="text"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorCo" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Introduce un correo valido.
+            </ion-label>
+          </ion-item>
+        </div>
+
+        <div class="col">
+          <ion-item id="emailZ">
+            <ion-label floating>
+              <ion-icon name="mail"></ion-icon>Confirmar E-mail:
+            </ion-label>
+            <ion-input (keyup)="validar(9)" formControlName="mailConf" type="text"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorCoConf" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Confirma tu correo.
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <ion-item id="usuarioC">
+          <ion-label floating>
+            <ion-icon name="contact"></ion-icon> Usuario:
+          </ion-label>
+          <ion-input (keyup)="validar(5)" formControlName="usuario" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="errorUs" class="row">
+          <ion-label text-center color="danger" stacked>
+            <ion-icon name="alert"></ion-icon> Introduce un usuario valido <br>(Solo letras en minusculas y numeros.
+            <br>No se admite espacios. De 5-15 caracteres.):
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div class="col">
+        <ion-item id="fecha_nacimientoC">
+          <ion-label floating>
+            <ion-icon name="calendar"></ion-icon> Fecha Nacimiento:
+          </ion-label>
+          <ion-datetime (ionChange)="validar(8)" formControlName="fecha_nacimiento" min="1950" displayFormat="MMM DD YYYY"
+            pickerFormat="MMM DD YYYY" [(ngModel)]="event"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="errorDate" class="row">
+          <ion-label text-center color="danger" stacked>
+            <ion-icon name="alert"></ion-icon> Introduce tu fecha de nacimiento.
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ion-item id="passwordC">
+            <ion-label floating>
+              <ion-icon name="lock"></ion-icon> Contraseña:
+            </ion-label>
+            <ion-input (keyup)="validar(6)" formControlName="password" type="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorPass" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Introduce una contraseña valida:<br>Minimo 8 caracteres Máximo 15
+              caracteres<br>Al menos una letra mayúscula<br>Al menos una letra minucula<br>Al menos un dígito<br>No
+              espacios en blanco<br>Al menos un caracter especial.
+            </ion-label>
+          </ion-item>
+        </div>
+
+        <div class="col">
+          <ion-item id="confPasswordC">
+            <ion-label floating>
+              <ion-icon name="lock"></ion-icon> Confirmar Contraseña:
+            </ion-label>
+            <ion-input (keyup)="validar(7)" formControlName="confPassword" type="password"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorConfPass" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Confirma tu contraseña.
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+
+      <ion-item>
+        <ion-label stacked> Nota: </ion-label>
+        <ion-label stacked> Todos los datos son Obligatorios. </ion-label>
+      </ion-item>
+
+    </ion-list>
+    <div text-center padding>
+      <button color="botonMain" ion-button type="submit" [disabled]="errorG">Guardar</button>
+    </div>
+
+  </form>
+</ion-list>
+
+<ion-list *ngIf="!tablet" sm class="contenedorCelular">
+  <form [formGroup]="nvoUsr" (ngSubmit)="saveData()" novalidate>
+
+    <ion-list class="row">
+
+      <ion-item id="nombreC">
+        <ion-label floating>
+          <ion-icon name="person"></ion-icon> Nombre:
+        </ion-label>
+        <ion-input (keyup)="validar(1)" formControlName="nombre" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item *ngIf="errorN" class="row">
+        <ion-label text-center color="danger" stacked>
+          <ion-icon name="alert"></ion-icon> Introduce tus nombres.
+        </ion-label>
+      </ion-item>
+
+      <div class="row">
+        <ion-item id="apellidoPC" class="col">
+          <ion-label floating>
+            <ion-icon name="person"></ion-icon> Apellido Paterno:
+          </ion-label>
+          <ion-input (keyup)="validar(2)" formControlName="apellidoP" type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item id="apellidoMC" class="col">
+          <ion-label floating>
+            <ion-icon name="person"></ion-icon> Apellido Materno:
+          </ion-label>
+          <ion-input (keyup)="validar(3)" formControlName="apellidoM" type="text"></ion-input>
+        </ion-item>
+      </div>
+
+
+      <ion-item *ngIf="errorAp || errorAm" text-center class="row">
+        <ion-label color="danger" stacked>
+          <ion-icon name="alert"></ion-icon> Introduce tus Apellidos.
+        </ion-label>
+      </ion-item>
+
+      <div class="row">
+        <div class="col">
+          <ion-item id="emailC">
+            <ion-label floating>
+              <ion-icon name="mail"></ion-icon> E-mail:
+            </ion-label>
+            <ion-input (keyup)="validar(4)" formControlName="email" type="text"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorCo" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Introduce un correo valido.
+            </ion-label>
+          </ion-item>
+        </div>
+
+        <div class="col">
+          <ion-item id="emailZ">
+            <ion-label floating>
+              <ion-icon name="mail"></ion-icon>Confirmar E-mail:
+            </ion-label>
+            <ion-input (keyup)="validar(9)" formControlName="mailConf" type="text"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="errorCoConf" class="row">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Confirma tu correo.
+            </ion-label>
+          </ion-item>
+        </div>
+      </div>
+
+
+      <div class="col">
+        <ion-item id="usuarioC">
+          <ion-label floating>
+            <ion-icon name="contact"></ion-icon> Usuario:
+          </ion-label>
+          <ion-input (keyup)="validar(5)" formControlName="usuario" type="text"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="errorUs" class="row">
+          <ion-label text-center color="danger" stacked>
+            <ion-icon name="alert"></ion-icon> Introduce un usuario valido <br>(Solo letras en minusculas y numeros.
+            <br>No se admite espacios. De 5-15 caracteres.):
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div class="col">
+        <ion-item id="fecha_nacimientoC">
+          <ion-label floating>
+            <ion-icon name="calendar"></ion-icon> Fecha Nacimiento:
+          </ion-label>
+          <ion-datetime (ionChange)="validar(8)" formControlName="fecha_nacimiento" min="1950" displayFormat="MMM DD YYYY"
+            pickerFormat="MMM DD YYYY" [(ngModel)]="event"></ion-datetime>
+        </ion-item>
+        <ion-item *ngIf="errorDate" class="row">
+          <ion-label text-center color="danger" stacked>
+            <ion-icon name="alert"></ion-icon> Introduce tu fecha de nacimiento.
+          </ion-label>
+        </ion-item>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ion-item id="passwordC">
+            <ion-label floating>
+              <ion-icon name="lock"></ion-icon> Contraseña:
+            </ion-label>
+            <ion-input (keyup)="validar(6)" formControlName="password" type="password"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="errorPass">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Introduce una contraseña valida:<br>Minimo 8 caracteres Máximo 15
+              caracteres<br>Al menos una letra mayúscula<br>Al menos una letra minucula<br>Al menos un dígito<br>No
+              espacios en blanco<br>Al menos un caracter especial.
+            </ion-label>
+          </ion-item>
+        </div>
+
+        <div class="col">
+          <ion-item id="confPasswordC">
+            <ion-label floating>
+              <ion-icon name="lock"></ion-icon> Confirmar Contraseña:
+            </ion-label>
+            <ion-input (keyup)="validar(7)" formControlName="confPassword" type="password"></ion-input>
+          </ion-item>
+
+          <ion-item  *ngIf="errorConfPass">
+            <ion-label text-center color="danger" stacked>
+              <ion-icon name="alert"></ion-icon> Confirma tu contraseña.
+            </ion-label>
+          </ion-item>
+        </div>
+
+      </div>
+
+      <ion-item>
+        <ion-label stacked> Nota: </ion-label>
+        <ion-label stacked> Todos los datos son Obligatorios. </ion-label>
+      </ion-item>
+
+    </ion-list>
+    <div text-center padding>
+      <button color="botonMain" ion-button type="submit" [disabled]="errorG">Guardar</button>
+    </div>
+
+  </form>
+</ion-list>

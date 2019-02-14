@@ -1,0 +1,46 @@
+page-calendario {
+    .calendario{
+        background:#FFFFFF;
+        border: 1px solid black;
+    }
+    .calendarioFondo{
+        background:#F2F3F4;
+        -webkit-box-shadow: 9px 1px 12px 0px rgba(0,0,0,0.46);
+        -moz-box-shadow: 9px 1px 12px 0px rgba(0,0,0,0.46);
+        box-shadow: 9px 1px 12px 0px rgba(0,0,0,0.46);
+    }
+    .grafFondo{
+        background:trasparent;
+    }
+    .fondo{
+        background:#F5EFDA;
+    }
+    .margen{
+        margin: 10px 0;
+    }
+    .left_margen{
+        color: #12365E;
+        padding-left: 8px
+    }
+    .left_margen_{
+        color: #BEC0C3;
+        padding-left: 8px;
+        border-bottom: 1px solid black;
+        background:trasparent;
+    }
+    .borde{
+        border: 1px solid black;
+    }
+    .titulo{
+        background:#F5EFDA;
+    }
+    .rowPar{
+        background:#FFFFFF;
+    }
+    .rowImpar{
+        background:#D2D9D9;
+    }
+    ion-row { 
+        padding-top: 24px;
+      }
+}

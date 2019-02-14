@@ -1,0 +1,25 @@
+<ion-toolbar *ngIf="tablet" no-padding>
+  <ion-grid class="header-tittle">
+    <ion-row justify-content-between>
+      <ion-col>
+        <img src="assets/imgs/movilpaquett_logo_footer.png">
+      </ion-col>
+      <ion-col align-self-center>
+        <img src="assets/imgs/iconos_superiores_movilpaquett.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>
+
+<ion-toolbar *ngIf="!tablet" no-padding>
+  <ion-grid class="header-tittle">
+    <ion-row justify-content-between>
+      <ion-col>
+        <img src="assets/imgs/logo_movilpaquett_blanco.png">
+      </ion-col>
+      <ion-col align-self-center>
+        <img src="assets/imgs/iconos_superiores_movilpaquett.png">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-toolbar>

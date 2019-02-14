@@ -1,0 +1,59 @@
+page-login {
+    .item.item-input {
+        color:black;
+        background-color: transparent;
+    }
+    .contenedorCelular{
+        background: rgba(18, 118, 189, 0.377);
+        background: -moz-linear-gradient(left, rgba(18, 118, 189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(18,118,189, 0.377)), color-stop(100%, rgba(19,171,222, 0.377)));
+        background: -webkit-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -o-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -ms-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: linear-gradient(to right, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1276bd', endColorstr='#13abde', GradientType=1 );
+        border-radius: 53px 53px 53px 53px;
+        -moz-border-radius: 53px 53px 53px 53px;
+        -webkit-border-radius: 53px 53px 53px 53px;
+        height: auto;
+        width: auto;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+    .contenedorTablet{
+        background: rgba(18, 118, 189, 0.377);
+        background: -moz-linear-gradient(left, rgba(18, 118, 189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(18,118,189, 0.377)), color-stop(100%, rgba(19,171,222, 0.377)));
+        background: -webkit-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -o-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: -ms-linear-gradient(left, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        background: linear-gradient(to right, rgba(18,118,189, 0.377) 0%, rgba(19,171,222, 0.377) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1276bd', endColorstr='#13abde', GradientType=1 );
+        border-radius: 53px 53px 53px 53px;
+        -moz-border-radius: 53px 53px 53px 53px;
+        -webkit-border-radius: 53px 53px 53px 53px;
+        height: auto;
+        width: auto;
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    .divMargen{
+        margin: 20px;
+    }
+    .pMargen{
+        padding: 10px
+    }
+    .roundButton{
+        border-radius: 19px 19px 19px 19px;
+        -moz-border-radius: 19px 19px 19px 19px;
+        -webkit-border-radius: 19px 19px 19px 19px;
+        border: 0px solid #000000;
+    }
+    .background-login{
+        background-image: url('../../assets/imgs/background_registro.png');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}

@@ -1,0 +1,44 @@
+<ion-content style="background:#F2F3F4;" no-padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col padding col-6 class="calendarioFondo">
+          <ion-row> 
+            <ion-col>
+              <div class="left_margen" text-left><h3>INFORMES</h3></div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="calendario" no-padding>
+            <ion-col >
+              <ion-calendar #calendar lang="es" (onDaySelect)="onDaySelect($event)"></ion-calendar>
+            </ion-col>
+          </ion-row>
+          <br><br><br><br><br><br>
+        </ion-col>
+
+        <ion-col *ngIf="fechaSelect" padding class="grafFondo">
+          <ion-row> 
+            <ion-col no-padding>
+              <div class="left_margen" text-left><h3>Fecha</h3></div>
+            </ion-col>
+            <h1 no-padding col-12 class="left_margen_" text-left>{{fechaSelect}}</h1>
+          </ion-row>
+          <br>
+          <ion-row class="calendario" no-padding>
+            <div style="display: block">
+              <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType"
+                      [colors]="colors"></canvas>
+            </div>
+          </ion-row>
+          <br><br><br><br><br><br>
+        </ion-col>
+
+      </ion-row>
+      
+      
+    </ion-grid>
+</ion-content>

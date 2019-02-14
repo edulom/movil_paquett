@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="navCtrl.pop();">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="row">
+    <ion-list text-center class="contenedor">
+      <br>
+      <h4>Confirma tu contraseña.</h4>
+      <br>
+      <p>Para continuar debes introducir tu contraseña.</p>
+      <br>
+      <ion-list>
+        <div class="divMargen">
+          <ion-item>
+            <ion-label color="text" floating>Contraseña</ion-label>
+            <ion-input [(ngModel)]="verifPassword" type="password"></ion-input>
+          </ion-item>
+          <button (click)="validar()" *ngIf="verifPassword" ion-button color="botonMain" item-right>Confirmar</button>
+        </div>
+      </ion-list>
+
+
+
+    </ion-list>
+  </div>
+
+
+</ion-content>

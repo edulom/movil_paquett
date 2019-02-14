@@ -1,0 +1,28 @@
+<ion-header no-border transparent>
+  <ion-navbar transparent>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngIf="tablet" class="main">
+  <ion-list>
+    <img width="35%" height="35%" src="assets/imgs/logo_movilpaquett_tienda.png">
+  </ion-list>
+
+  <page-nueva-cuenta></page-nueva-cuenta>
+
+
+
+
+</ion-content>
+
+<ion-content *ngIf="!tablet" class="main">
+  <ion-list>
+    <img width="70%" height="70%" src="assets/imgs/logo_movilpaquett_tienda.png">
+  </ion-list>
+  <page-nueva-cuenta></page-nueva-cuenta>
+
+
+
+
+
+</ion-content>

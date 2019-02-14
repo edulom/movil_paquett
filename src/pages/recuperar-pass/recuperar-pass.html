@@ -1,0 +1,60 @@
+<ion-header no-border transparent>
+  <ion-navbar transparent>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="navCtrl.pop();">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!sendMail && !codSeg">Recupera tu cuenta.</ion-title>
+    <ion-title *ngIf="sendMail && !codSeg">Introduce el código de seguridad.</ion-title>
+    <ion-title *ngIf="codSeg">Elige una contraseña nueva.</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="row">
+    <ion-list *ngIf="!sendMail && !codSeg" text-center class="contenedor">
+      <p>Introduce tu correo electrónico o nombre de usuario.</p>
+      <ion-list>
+        <div>
+          <ion-item>
+            <ion-label color="dark" floating>Correo/Usuario</ion-label>
+            <ion-input clearInput [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <button (click)="enviar()" *ngIf="email" ion-button color="botonMain" item-right>Confirmar</button>
+        </div>
+      </ion-list>
+
+    </ion-list>
+
+    <ion-list *ngIf="sendMail && !codSeg" text-center class="contenedor">
+      <p>Comprueba si has recibido un mensaje con tu código en tu correo electrónico.</p>
+      <ion-list>
+        <div>
+          <ion-item>
+            <ion-label color="dark" floating>Introduce el código</ion-label>
+            <ion-input clearInput [(ngModel)]="codigo"></ion-input>
+          </ion-item>
+          <button (click)="validar()" *ngIf="codigo" ion-button color="botonMain" item-right>Confirmar</button>
+        </div>
+      </ion-list>
+    
+    </ion-list>
+    <ion-list *ngIf="codSeg" text-center class="contenedor">
+      <p>Una contraseña segura combina letras y signos de puntuación. Recuerda que la contraseña debe tener minimo 8 y máximo 15 caracteres, al menos una letra mayúscula, una letra minucula, un dígito, sin espacios en blanco, y al menos un caracter especial.</p>
+      <ion-list>
+        <div>
+          <ion-item>
+            <ion-label color="dark" floating>Contraseña nueva</ion-label>
+            <ion-input clearInput [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <button (click)="guardar()" *ngIf="password" ion-button color="botonMain" item-right>Confirmar</button>
+        </div>
+      </ion-list>
+    
+    </ion-list>
+  </div>
+
+
+</ion-content>

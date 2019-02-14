@@ -1,0 +1,71 @@
+<ion-content no-padding>
+  
+    <ion-grid>
+      <ion-row no-padding>
+        <ion-col class="tablaHistory">
+          <ion-row> 
+            <ion-col>
+              <div class="left_margen" text-left><h3>HISTORIAL</h3></div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="borde"> 
+            <ion-col class="borde titulo">
+              <div text-center><h6>DESCRIPCIÓN PAQUETE</h6></div>
+            </ion-col>
+            <ion-col class="borde titulo">
+              <div text-center><h6>FECHA PAQUETE RECIBIDO</h6></div>
+            </ion-col>
+            <ion-col class="borde titulo">
+              <div text-center><h6>FECHA PAQUETE ENTREGADO</h6></div>
+            </ion-col>
+          </ion-row>
+
+          <div *ngFor="let history of historys; let i = index">
+            <ion-row *ngIf="i % 2 == 0" class="borde rowPar">
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.des}}
+                </div>
+              </ion-col>
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.fecha_recibido}}
+                </div>
+              </ion-col>
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.recha_entregado}}
+                </div>
+              </ion-col>
+            </ion-row>
+
+            <ion-row *ngIf="i % 2 != 0" class="borde rowImpar">
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.des}}
+                </div>
+              </ion-col>
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.fecha_recibido}}
+                </div>
+              </ion-col>
+              <ion-col class="borde">
+                <div  class="margen">
+                    {{history.recha_entregado}}
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+  
+          
+          <br><br><br>
+  
+  
+        </ion-col>
+      </ion-row>
+      
+    </ion-grid>
+    
+  </ion-content>

@@ -14,3 +14,37 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+    // custom icons
+    &[class*="appname-recibir-paquete-inactivo"] {
+        mask-image: url(../assets/icon/icono_recibir_paquete_inactivo.svg);
+    }
+    &[class*="appname-nuevo-pedido"] {
+         mask-image: url(../assets/icon/icono_nuevo_pedido.svg);
+    }
+    &[class*="appname-historial"] {
+         mask-image: url(../assets/icon/icono_historial.svg);
+    }
+    &[class*="appname-informes-inactivo"] {
+        mask-image: url(../assets/icon/icono_informes_inactivo.svg);
+    }
+    &[class*="appname-notificaciones"] {
+         mask-image: url(../assets/icon/icono_notificaciones.svg);
+    }
+    &[class*="appname-soporte"] {
+         mask-image: url(../assets/icon/icono_soporte.svg);
+    }
+    &[class*="appname-cerrar-sesion"] {
+         mask-image: url(../assets/icon/icono_cerrar-sesion.svg);
+    }
+}

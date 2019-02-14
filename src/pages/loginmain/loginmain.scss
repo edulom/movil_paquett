@@ -1,0 +1,21 @@
+page-loginmain {
+    .background-login{
+        background-image: url('../../assets/imgs/background_landscape_registro.png');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .background-login-portail{
+        background-image: url('../../assets/imgs/background_portrait_registro.png');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .imgLogo{
+        margin:0;
+        padding:-50;
+        border:1px solid black;
+    }
+}

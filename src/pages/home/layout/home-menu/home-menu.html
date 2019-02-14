@@ -1,0 +1,12 @@
+<ion-list>
+  <div *ngFor="let button of buttons; let i = index">
+    <ion-item *ngIf="i!=0" class="margenButton compoNoSelect" (click)="mostrarContenido(i)" [id]="i" >
+      <ion-icon *ngIf="i!=0" [id]="'icon'+i" class="iconNoselect" name={{button.icons}} item-start></ion-icon>
+      <label *ngIf="i!=0" [id]="'label'+i" class="txtNoselect">{{button.tags}}</label>
+    </ion-item>
+    <ion-item *ngIf="i==0" class="margenButton compoSelect" (click)="mostrarContenido(i)" [id]="i" >
+        <ion-icon *ngIf="i==0" [id]="'icon'+i" class="iconselect" name={{button.icons}} item-start></ion-icon>
+        <label *ngIf="i==0" [id]="'label'+i" class="txtselect">{{button.tags}}</label>
+      </ion-item>
+  </div>
+</ion-list>

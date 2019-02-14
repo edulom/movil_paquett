@@ -1,0 +1,28 @@
+<ion-content padding>
+  
+  <ion-grid>
+    <ion-row justify-content-center no-padding>
+      <ion-col col-10 class="tablaPaqEntre">
+        <ion-row> 
+          <ion-col>
+            <div class="left_margen" text-left><h3>LISTADO DE PAQUETES</h3></div>
+            <div class="left_margen_" text-left><h6>Descripción</h6></div>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="background:#F9FAFA;border: 1px solid black;" *ngFor="let paquete of paquetes; let i = index">
+          <ion-col>
+            <button class="margen" clear ion-button color="text">
+                {{paquete}}
+            </button>
+          </ion-col>
+        </ion-row>
+        <br><br><br>
+
+
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+  
+</ion-content>
